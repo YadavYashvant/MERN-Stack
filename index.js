@@ -1,6 +1,5 @@
-import express, { response } from 'express';
-
-const app = express();
+var express = require('express');
+var app = express();
 
 //using middlewares
 app.use(express.static(path.join(path.resolve(), "public"))); // Static files
@@ -9,7 +8,7 @@ app.use(express.urlencoded({extended: true})); // Body parser
 app.set("viewengine", "ejs");
 
 app.get("/", (req, res) => {
-    res.render("index");
+    res.send("index");
 });
 
 app.listen(5000, () => {
